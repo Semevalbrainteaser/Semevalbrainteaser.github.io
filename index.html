@@ -76,25 +76,48 @@
     <div class="sidebar">
         <ul>
             <h2>SemEval-2024</h2>
-            <li><a href="#main-content">Task Description</a></li>
+            <li><a href="#motivation">Motivation</a></li>
             <li><a href="#task-example">Task Example</a></li>
+            <li><a href="#data">Data</a></li>
+            <li><a href="#codalab">Codalab</a></li>
+            <li><a href="#leaderboard">Leaderboard</a></li>
             <li><a href="#important-dates">Important Dates</a></li>
             <li><a href="#organization">Organization</a></li>
         </ul>
     </div>
     <div class="main-content">
     <header>
-        <h1 id="main-content">SemEval 2024 BRAINTEASER: A Novel Task Defying Common Sense</h1>
-        <a href="#">Task Home Page</a>
+        <h1 >SemEval 2024 BRAINTEASER: A Novel Task Defying Common Sense</h1>
+        <a href="https://semeval.github.io/SemEval2024/tasks">Task Home Page</a>
     </header>
-
-    <p>BRAINTEASER QA task consists of two subtasks-<strong>Reverse Thinking</strong> and <strong>Word Play</strong> that require awareness of commonsense “defaults” and overwriting them through  unconventional thinking that distinguishes these defaults from hard constraints.
-    
+    <h2 id ="motivation">Motivation</h2>
+    <p>Human reasoning processes comprise two types of thinking: vertical and lateral. 
+        Vertical thinking, also known as linear, convergent, or logical thinking, is a sequential analytical process that is based on rationality, logic, and rules.
+        Meanwhile, lateral thinking (or “thinking outside the box”) is a divergent and creative process that involves looking at a problem from a new
+        perspective and defying preconceptions.
+    </p>
+    <p>
+        The success of language models has inspired
+        the NLP community to attend to tasks that
+        require implicit and complex reasoning, relying on human-like commonsense mechanisms.
+        While such vertical thinking tasks have been
+        relatively popular, lateral thinking puzzles have
+        received little attention. To bridge this gap,
+        we devise BRAINTEASER: a multiple-choice
+        Question Answering task designed to test the
+        model’s ability to exhibit lateral thinking and
+        defy default commonsense associations.
     </p>
 
+    <p>BRAINTEASER QA task consists of two subtasks-<strong>Sentence Puzzle</strong> and <strong>Word Puzzle</strong> 
+        that require awareness of commonsense “defaults” and overwriting them through  unconventional thinking that distinguishes these defaults from hard constraints.
+    </p>
+
+
     <ul>
-        <li><strong>Reverse Thinking</strong>: Sentence-type brain teaser requires systems to defy commonsense assoications and think out of box.</li>
-        <li><strong>Word Play</strong>: Word-type brain teaser requires systems to discard the semantic meaning of the question or answer but pay attention in a literal way.</li>
+        <li><strong>Sentence Puzzle</strong>: Sentence-type brain teaser where the puzzle defying commonsense is centered on sentence snippets. </li>
+        <li><strong>Word Puzzle</strong>: Word-type brain teaser where the answer violates the default 
+            meaning of the word and focuses on the letter composition of the target question</li>
     </ul>
 
     <p>Both tasks include an adversarial subset, created by manually modifying the original brain teasers without changing their latent reasoning path.</p>
@@ -147,7 +170,7 @@
     original reasoning path but changes both the question and the answer to describe a new situational context. </li>
     </ul>
 
-    <p>Here are one example of two adversarial versions of reverser thinking </p>
+    <p>Here are the example of two adversarial versions of Sentence Puzzle: </p>
     <table align="center">
     <thead>
         <tr>
@@ -205,7 +228,63 @@
         <li> <strong>Instance-based Accuracy</strong>: We considers each question (original/adversarial) as a separate instance. We will report accuracy for the original, and its adversarials.</li>
         <li> <strong>Group-based Accuracy</strong>: Each question and its associated adversarial instances form a group, and a system will only receive a score of 1 when it correctly solves all questions in the group.</li>
     </ul>
+    <h2 id ="data"> Data</h2>
+    <p>The <a href="https://drive.google.com/drive/u/2/folders/1kiFXp5fqpf8--NQJJAlBIBpfSaXTk1UY">pilot data</a> is now available. 
+    The training and validation split will be releaded based on the SemEval timeline.</p>
 
+    <p><a href="https://forms.gle/MePgeDWNZwaEps9V7">Registration form</a> for participation and the legal usage of data.</p>
+
+    <p><a href="https://groups.google.com/g/brainteaser9">Mailing list</a> for task updates.</p>
+    <p>For further question, please contact: yifjia@isi.edu</p>
+
+    <h2 id ="codalab"> Codalab</h2>
+    <p>The tasks are set to be facilitated on CodaLab, with the availability of the link being aligned with the SemEval schedule. 
+        Participants are encouraged to <a href="https://forms.gle/MePgeDWNZwaEps9V7">register</a> at the earliest and join the <a href="https://groups.google.com/g/brainteaser9">mailing list</a> to stay abreast of updates.</p>
+
+    <h2 id ="leaderboard"> Leaderboard</h2>
+    <p>Sentence Puzzle</p>
+    <table>
+        <tr>
+            <th>Team</th>
+            <th>Original</th>
+            <th>Semantic</th>
+            <th>Context</th>
+            <th>Ori & Sem</th>
+            <th>Ori & Sem & Con</th>
+            <th>Overall</th>
+        </tr>
+        <tr>
+            <td>ChatGPT (zero-shot)</td>
+            <td>60.77</td>
+            <td>59.33</td>
+            <td>67.94</td>
+            <td>50.72</td>
+            <td>39.71</td>
+            <td>62.68</td>
+        </tr>
+    </table>
+
+    <p>Word Puzzle</p>
+    <table>
+        <tr>
+            <th>Team</th>
+            <th>Original</th>
+            <th>Semantic</th>
+            <th>Context</th>
+            <th>Ori & Sem</th>
+            <th>Ori & Sem & Con</th>
+            <th>Overall</th>
+        </tr>
+        <tr>
+            <td>ChatGPT (zero-shot)</td>
+            <td>56.10</td>
+            <td>52.44</td>
+            <td>51.83</td>
+            <td>43.90</td>
+            <td>29.27</td>
+            <td>53.46</td>
+        </tr>
+    </table>
     <h2 id ="important-dates">Important Dates</h2>
     <table>
         <tr>
@@ -249,22 +328,27 @@
     </table>
     
     <h2 id ="organization">Organization</h2>
+
     <table>
         <tr>
             <th>Name</th>
             <th>Affiliation</th>
+            <th>Email </th>
         </tr>
         <tr>
             <td>Yifan Jiang</td>
             <td>USC,ISI</td>
+            <td>yifjia@isi.edu</td>
         </tr>
         <tr>
             <td>Filip Ilievski</td>
             <td>USC,ISI</td>
+            <td>ilievski@isi.edu</td>
         </tr>
         <tr>
             <td>Kaixin Ma</td>
             <td>CMU, LTI</td>
+            <td>kaixinm@andrew.cmu.edu</td>
         </tr>
         <!-- Include other rows here -->
     </table>
